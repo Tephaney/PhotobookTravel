@@ -1,3 +1,5 @@
+/* Common Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -13,11 +15,13 @@ html {
 }
 
 :root {
-    --primary-color: #2b81e4;
+    --primary-color: #FFBF00;
     --secondary-color: #eee;
     --white-color: #fff;
     --gray-color: #555;
     --light-gray-color: #777;
+    --light-blue-color: #add8e6;
+
 }
 
 .center {
@@ -26,7 +30,7 @@ html {
     align-items: center;
 }
 
-/* Banner */
+
 
 .container {
     background-color: var(--secondary-color);
@@ -34,7 +38,10 @@ html {
     box-shadow: 0 1rem 3rem var(--gray-color);
     overflow: hidden;
 }
+/* End of common styles */
 
+
+/* Banner */
 .header {
     width: 100%;
     height: calc(100vh - 7rem);
@@ -54,7 +61,7 @@ html {
 
 .heading {
     font-size: 8rem;
-    color: var(--white-color);
+    color: var(--light-blue-color);
 }
 
 .header-paragraph {
@@ -167,7 +174,215 @@ html {
 100% {
     transform: translateZ(40rem);
     opacity: 1;
-}
+    }
 }
 
 /* End of Banner */
+
+/* Season Destinations */
+.popular-tours {
+    padding: 5rem 0 10rem 0;
+
+}
+
+.popular-tours-heading {
+    font-size: 8rem;
+    text-align: center;
+    margin-bottom: 8rem;
+    color: #E49B0F;
+    text-shadow: 0 .1rem .2rem var(--primary-color);
+}
+
+.cards-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card {
+    width: 35rem;
+    position: relative;
+    perspective: 150rem;
+
+}
+
+.card-image {
+    width: 100%;
+    border-radius: .3rem .3rem 0 0;
+}
+
+.front-side {
+    text-align: center;
+    background-color: var(--light-blue-color);
+    border-radius: 0.3rem;
+    position: relative;
+    z-index: 10;
+    opacity: .9;
+    transition: opacity .4s, transform .4s, box-shadow .4s;
+}
+
+.change > .front-side {
+    transform: translateZ(-5rem) translateX(3rem);
+    box-shadow: 0 2rem 4rem #777;
+    opacity: .5;
+    z-index: 0;
+}
+
+
+.change > .back-side {
+    transform: translateZ(0) translateX(0);
+    box-shadow: 0 .5rem 2rem #aaa;
+    opacity: .9;
+    
+}
+
+
+
+.tour-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: absolute;
+    top: 30%;
+    right: 1.5rem;
+    color: var(--white-color);
+    text-shadow: 0 0 1rem #000;
+  }
+
+  .card-list {
+    width: 80%;
+    margin: auto;
+    padding: 2rem 0 3rem 0;
+  }
+
+  .card-list-item {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: light var(--light-gray-color);
+    margin: 2rem 0;
+    border-bottom: .1rem solid var(--primary-color);
+    padding-bottom: 1.5rem;
+  }
+
+  .back-side {
+    position: absolute;
+    top: 0;
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 100%;
+    border-radius: .3rem;
+    box-shadow: 0 2rem 4rem #777;
+    flex-direction: column;
+    transform: translateZ(-5rem) translateX(3rem);
+    opacity: .5;
+    transition: opacity .4s, transform .4s, box-shadow .4s;
+  }
+
+  .tour-price {
+    font-size: 5rem;
+    font-weight: 300;
+    color: var(--white-color);
+    margin-bottom: 3rem;
+  }
+
+  .card-button {
+    color: var(--primary-color);
+    background-color: var(--white-color);
+    border: none;
+    font-size: 2.5rem;
+    padding: 1rem 2rem;
+    letter-spacing: .2rem;
+    border-radius: 5rem;
+    cursor: pointer;
+  }
+
+  .navigation-button {
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    padding: .5rem;
+    background-color: rgba(255, 255, 255, .8);
+    color: var(--light-gray-color);
+    border-radius: .3rem;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    cursor: pointer;
+    
+  }
+
+/* End of Season Destinations */
+
+/* Reviews */
+
+.reviews {
+    padding: 10rem 0;
+    position: relative;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .4;
+}
+
+.bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.reviews-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reviews-bg {
+    background-color: var(--light-blue-color);
+    opacity: .8;
+    padding: 5rem;
+    margin: 5rem;
+    width: 70%;
+    box-shadow: 0 2rem 5rem rgba(51, 51, 51, .4);
+    transform: skewX(20deg);
+}
+
+.review {
+    transform: skewX(-20deg);
+    display: flex;
+}
+
+.review-image {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 5rem;
+}
+
+.review-text {
+    letter-spacing: .1rem;
+}
+
+.review-heading {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--light-gray-color);
+    margin-bottom: 1rem;
+}
+
+.review-paragraph {
+    font-size: 1.8rem;
+    color: var(--light-gray-color);
+}
+
+.review-paragraph::first-letter {
+    margin-left: 1rem;
+}
+
+/* End of Reviews */
